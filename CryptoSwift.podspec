@@ -17,4 +17,10 @@ Pod::Spec.new do |s|
   s.source_files  = "Sources/CryptoSwift/**/*.swift"
   s.requires_arc = true
   s.resource_bundles = {'CryptoSwift' => ['Sources/CryptoSwift/PrivacyInfo.xcprivacy']}
+
+  # Library Evolution enabled via build settings (not unsafeFlags)
+  s.xcconfig = {
+    'BUILD_LIBRARY_FOR_DISTRIBUTION' => 'YES',
+    'OTHER_SWIFT_FLAGS' => '$(inherited) -Xfrontend -enable-library-evolution'
+  }
 end
