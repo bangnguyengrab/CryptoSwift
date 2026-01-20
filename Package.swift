@@ -1,4 +1,4 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.9
 
 import PackageDescription
 
@@ -15,7 +15,10 @@ let package = Package(
   ],
   targets: [
     .target(
-      name: "CryptoSwift"
+      name: "CryptoSwift",
+      swiftSettings: [
+        .unsafeFlags(["-Xfrontend", "-enable-library-evolution"])
+      ]
     ),
     .testTarget(name: "CryptoSwiftTests", dependencies: ["CryptoSwift"]),
     .testTarget(name: "TestsPerformance", dependencies: ["CryptoSwift"])
