@@ -15,10 +15,7 @@ let package = Package(
   ],
   targets: [
     .target(
-      name: "CryptoSwift",
-      swiftSettings: [
-        .unsafeFlags(["-Xfrontend", "-enable-library-evolution"])
-      ]
+      name: "CryptoSwift"
     ),
     .testTarget(name: "CryptoSwiftTests", dependencies: ["CryptoSwift"]),
     .testTarget(name: "TestsPerformance", dependencies: ["CryptoSwift"])
