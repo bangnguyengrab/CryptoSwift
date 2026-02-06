@@ -1,4 +1,4 @@
-// swift-tools-version:5.3
+// swift-tools-version:6.0
 
 import PackageDescription
 
@@ -16,12 +16,13 @@ let package = Package(
   targets: [
     .target(
       name: "CryptoSwift",
+      resources: [.copy("PrivacyInfo.xcprivacy")],
       swiftSettings: [.unsafeFlags(["-enable-library-evolution"])]
     ),
     .testTarget(name: "CryptoSwiftTests", dependencies: ["CryptoSwift"]),
     .testTarget(name: "TestsPerformance", dependencies: ["CryptoSwift"])
   ],
-  swiftLanguageVersions: [.v5]
+  swiftLanguageVersions: [.v5, .v6]
 )
 
 #if swift(>=5.6)
