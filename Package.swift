@@ -15,11 +15,12 @@ let package = Package(
   ],
   targets: [
     .target(
-      name: "CryptoSwift", 
+      name: "CryptoSwift",
       resources: [.copy("PrivacyInfo.xcprivacy")],
       swiftSettings: [.unsafeFlags(["-enable-library-evolution"])]
     ),
-    .testTarget(name: "CryptoSwiftTests", dependencies: ["CryptoSwift"])
+    .testTarget(name: "CryptoSwiftTests", dependencies: ["CryptoSwift"]),
+    .testTarget(name: "TestsPerformance", dependencies: ["CryptoSwift"])
   ],
   swiftLanguageVersions: [.v5]
 )
